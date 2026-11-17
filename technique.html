@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1512">
+<title>羽毛球技术自查 · 3 条打球建议</title>
+<style>
+  :root{--bg:#0B1512;--bg2:#12211B;--panel:rgba(255,255,255,.055);--line:rgba(255,255,255,.12);
+    --ink:#EEF4EE;--muted:#93A79C;--lime:#C9F25B;--coral:#FF7A45;--gold:#FFC94A;--sky:#7ED7F0;--mint:#8DE08D;--violet:#B49BFF;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{background:radial-gradient(900px 500px at 110% -12%,rgba(201,242,91,.10) 0%,transparent 55%),
+    radial-gradient(800px 460px at -20% 108%,rgba(126,215,240,.08) 0%,transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));
+    background-attachment:fixed;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans SC",sans-serif;
+    -webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.62;touch-action:manipulation;}
+  .app{max-width:480px;margin:0 auto;padding:18px 16px calc(30px + env(safe-area-inset-bottom));min-height:100vh;display:flex;flex-direction:column;}
+  .screen{animation:in .3s ease both;}
+  @keyframes in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .grow{flex:1;}
+  h1{font-size:38px;line-height:1.18;margin:6px 0 0;font-weight:900;letter-spacing:-.03em;}
+  h1 em{font-style:normal;color:var(--lime);}
+  .badge{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:7px 13px;border-radius:99px;
+    border:1px solid rgba(201,242,91,.34);background:rgba(201,242,91,.08);color:var(--lime);font-size:12px;font-weight:700;}
+  .sub{color:var(--muted);font-size:14.5px;margin:8px 0 0;max-width:24em;}
+  .dims{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;font-size:12px;background:var(--panel);border:1px solid var(--line);color:#D7E2D8;}
+  .chip i{width:7px;height:7px;border-radius:50%;display:block;}
+  .facts{display:flex;gap:22px;margin:10px 0 0;}
+  .facts b{font-size:22px;font-weight:900;letter-spacing:-.02em;}
+  .facts span{display:block;color:var(--muted);font-size:11px;margin-top:-2px;}
+  button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;}
+  .btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:17px;border-radius:16px;
+    background:var(--lime);color:#0B1512;font-weight:900;font-size:16.5px;box-shadow:0 10px 28px rgba(201,242,91,.16);}
+  .btn:active{transform:scale(.985);}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none;font-weight:700;}
+  .hint{text-align:center;color:var(--muted);font-size:11.5px;margin:10px 0 0;}
+  .quizbar{position:sticky;top:0;z-index:5;padding:8px 0 10px;background:linear-gradient(180deg,rgba(11,21,18,.96),rgba(11,21,18,0));}
+  .qtop{display:flex;align-items:center;gap:10px;}
+  .back{width:34px;height:34px;border-radius:11px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;font-size:15px;}
+  .qmeta{flex:1;display:flex;flex-direction:column;gap:5px;}
+  .qmeta .row{display:flex;justify-content:space-between;align-items:baseline;}
+  .qcat{font-size:12px;font-weight:800;}
+  .qcount{font-size:11px;color:var(--muted);}
+  .track{height:5px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;}
+  .track i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--lime),#8DE08D);transition:width .3s;}
+  .qnum{font-size:11px;color:var(--muted);letter-spacing:.18em;font-weight:700;margin-top:16px;}
+  .question{font-size:23px;font-weight:800;line-height:1.5;margin:8px 0 18px;letter-spacing:-.015em;}
+  .opt{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;padding:14px 16px;border-radius:14px;
+    background:var(--panel);border:1px solid var(--line);font-size:15px;margin-bottom:9px;transition:all .14s;}
+  .opt:active{transform:scale(.992);}
+  .opt.on{border-color:var(--lime);background:rgba(201,242,91,.13);}
+  .opt .dot{width:18px;height:18px;border-radius:50%;border:1.6px solid rgba(255,255,255,.25);flex:none;position:relative;}
+  .opt.on .dot{border-color:var(--lime);}
+  .opt.on .dot::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:var(--lime);}
+  .scale{display:flex;justify-content:space-between;color:var(--muted);font-size:10.5px;margin-top:2px;padding:0 3px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px;margin-top:12px;}
+  .card h3{margin:0 0 10px;font-size:13.5px;font-weight:800;letter-spacing:.05em;color:#DCE7DB;}
+  .grade-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .gcell{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:9px 10px;text-align:center;}
+  .gcell .gn{font-size:12px;}
+  .gcell .gg{font-size:19px;font-weight:900;line-height:1.2;}
+  .advice{padding:13px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);margin-bottom:10px;}
+  .advice .ah{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .advice .num{width:22px;height:22px;border-radius:50%;background:var(--lime);color:#0B1512;font-size:12px;font-weight:900;display:grid;place-items:center;flex:none;}
+  .advice .at{font-size:14px;font-weight:800;}
+  .advice p{margin:0;font-size:13px;line-height:1.75;color:#B9C6B9;}
+  .advice p b{color:var(--ink);}
+  .cta{border:1px solid rgba(201,242,91,.35);background:rgba(201,242,91,.07);}
+  .cta .head{font-size:15px;font-weight:900;color:var(--lime);margin-bottom:6px;}
+  .cta p{margin:0 0 12px;font-size:13px;color:#C8D4C6;line-height:1.7;}
+  .para{font-size:14px;line-height:1.8;margin:0;color:#D9E3D8;}
+  .actions{display:flex;gap:9px;margin-top:14px;}
+  .footnote{color:var(--muted);font-size:11px;text-align:center;margin:16px 0 0;line-height:1.7;}
+</style>
+</head>
+<body>
+<main class="app" id="app"></main>
+<script>
+(function () {
+  "use strict";
+  var QUESTIONS = [{"id":1,"dim":"phys","reverse":false,"text":"打到决胜局最后几分，我还能蹬地起跳杀球"},{"id":2,"dim":"phys","reverse":false,"text":"快速变向之后，我还能稳住不晃"},{"id":3,"dim":"phys","reverse":false,"text":"打满三局，我的发力还在链条上，不靠手臂硬甩"},{"id":4,"dim":"phys","reverse":true,"text":"打到后半段，我的蹬跨明显变慢，只能靠手臂"},{"id":5,"dim":"foot","reverse":false,"text":"对方吊我正手网前，我能两步冲上去"},{"id":6,"dim":"foot","reverse":false,"text":"连续接杀，我能用小跳保持随时启动"},{"id":7,"dim":"foot","reverse":false,"text":"被压到正手后场，我会先到位再出手，不到最后不伸手"},{"id":8,"dim":"foot","reverse":true,"text":"被对手连续压两点，我第二拍就跟不上位置"},{"id":9,"dim":"tech","reverse":false,"text":"对手回我中场球，我能把球按到他后场角"},{"id":10,"dim":"tech","reverse":false,"text":"接发球时，我能用假动作晃到对手"},{"id":11,"dim":"tech","reverse":false,"text":"网前搓球能搓到贴网，让对手只能挑起来"},{"id":12,"dim":"tech","reverse":true,"text":"网前小球我基本靠碰，搓不出贴网"},{"id":13,"dim":"attack","reverse":false,"text":"对方挑球不到位，我能一板杀下去"},{"id":14,"dim":"attack","reverse":false,"text":"对手退到后场，我会用重杀和劈杀换着打"},{"id":15,"dim":"attack","reverse":false,"text":"我能用对角劈杀把对手重心拉出场外"},{"id":16,"dim":"attack","reverse":true,"text":"我的杀球威胁不大，对手不怕退后场"},{"id":17,"dim":"tact","reverse":false,"text":"开局几个球，我会先找对手的弱点"},{"id":18,"dim":"tact","reverse":false,"text":"对手杀球猛，我会先挡过去再找机会"},{"id":19,"dim":"tact","reverse":false,"text":"我会先打对手反手后场，等他回不到位再下手"},{"id":20,"dim":"tact","reverse":true,"text":"我打球基本凭本能，很少提前设计下一拍落点"},{"id":21,"dim":"mental","reverse":false,"text":"打到20平，我敢主动发球抢攻"},{"id":22,"dim":"mental","reverse":false,"text":"被压到后面，我还能冷静找机会反击"},{"id":23,"dim":"mental","reverse":false,"text":"落后五六个球，我也能一分一分咬，不急着搏杀"},{"id":24,"dim":"mental","reverse":true,"text":"一到关键分我就想一板解决，反而失误更多"}];
+  var COPY = {"band":{"phys":{"S":"后场杀球落地就能接下一拍，多拍相持后蹬地照样有力，第三局速度也不掉。核心和下肢能把力量持续送上来，这是同龄人里少见的下限。建议力量课之外加 4×30 秒多球间歇冲刺，把体能转化到场上。","A":"点杀有速度，起跳落地也不发虚，但连打十拍以上杀球质量会往下掉。第三局跑动变沉，说明体能够用但不耐用。建议每周两次 20 分钟深蹲跳加跳绳循环，练完马上打多球。","B":"半场对拉还行，一旦被拉长回合就靠手臂硬救，起跳杀完落地回位慢半拍。发力更多来自手臂而不是蹬地转体，所以越打越吃力。建议先练原地蹬转发力和落地缓冲，每次 3 组 10 次。","C":"多拍后动作容易散，杀球基本靠手臂抡，腰腹没参与进来，两局下来喘得说不出话。身体基础还不支持你打连续高强度。建议每周两次快走加徒手深蹲、平板支撑，先把基础量堆起来。","D":"打一局就腿软，跳杀落地自己都站不稳，杀球全靠手甩。这不是技术问题，而是身体底子还没打起来。建议先做靠墙静蹲、提踵和快走，每次 15 分钟，坚持两周再上场打多球。"},"foot":{"S":"对方吊球你能两步上网，杀球后一步回中，交叉步上网也不打结。启动第一步快、重心稳，是全场覆盖的底子。建议加练多球随机落点，练判断的同时保持步频，别只练固定米字步。","A":"常规米字步够用，被动球能救到但上网偏慢半拍，退后场有时会乱成并步。说明启动第一步和交叉步的衔接还不稳。建议每周两次绳梯加多球对角吊上网，专练回中的第一步。","B":"主动球能跑到位，被动吊球常常够不着，杀球后回中总慢一点。问题在脚踝接地不硬，蹬不回来。建议练单脚提踵和低重心左右滑步，每次 3 组 20 秒，再配合多球固定点回中。","C":"经常一步到位就定住，球一变向就要二次调整；上网后忘了回中，后场空一大片。这是启动和回中都没形成习惯。建议先用无球米字步把回中固定下来，每天 5 组，再进有球练习。","D":"站着等球打，球一拉开就靠手臂去够，打完不知道自己该站哪。基础站位和回中意识都还没建立。建议先学原地小碎步和垫步回中，对着墙练 5 分钟，再让人喂固定两点跑动。"},"tech":{"S":"网前搓球能搓到贴网，勾对角能把人拉开，后场劈吊能让对手提前起跳。手腕刚性和拍面控制都到位，手指还能二次发力。建议多球里混入被动低位球，练被压时也能贴网回球。","A":"搓放基本贴网，勾对角偶尔会出界，杀球落点够用但变化不多。拍面控制和二次发力刚成型，还不太敢在被动时用手指补力。建议每天 100 拍网前固定点搓放，加 20 拍反手过渡。","B":"网前能搓能放，但节奏一快就冒高被扑，挑球常常只到半场。说明手腕刚性不够，拍面在触球瞬间会晃。建议先练固定点搓放 50 次找手感，再练手指发力的正手勾对角。","C":"搓球经常过高，放网忽远忽近，后场吊球质量靠蒙，被人一逼就挑高。拍面控制还没成型。建议从贴网搓放的原地练习开始，每天 100 次只求过网贴网，先把手腕定住。","D":"网前基本靠碰，搓放要么下网要么冒高被扑，拍面角度完全靠感觉。需要从握拍和拍面认起。建议先练握拍转换和正手贴网定点挡球，每次 100 个，先保证过网质量。"},"attack":{"S":"后场起跳重杀能压到边线，点杀突然，杀完还能连贯上网。击球点高、下压角度刁，杀吊结合让人不敢提前退。建议保持进攻威胁的同时加练防守反击，别把每分都压在重杀上。","A":"重杀有威胁，落点偏中路，吊球能吊起来但和杀球动作不够一致，对手容易提前判断。击球点还行，下压角度偏平。建议练杀吊同一引拍，每天 30 个杀球配 30 个吊球交替出手。","B":"能杀但压不住，球常被挡回中场，想吊又吊不贴网，杀吊结合基本没有。问题在击球点偏低，下压角度不够。建议先练高点位的原地杀球，再逐步加入吊球。","C":"杀球发不出力，经常杀到自己往前冲，下压靠手腕硬压，容易被反抽。击球点很低。建议先固定原地顶点击球点，把挥拍轨迹拉直，每次 20 个定点杀球，先求过网下压。","D":"基本不杀球，偶尔抡一拍也常下网，后场只能靠高远球顶回去。缺少进攻手段。建议先练正手高远球的鞭打发力，20 个一组，能稳定压到底线后再尝试半场杀球。"},"tact":{"S":"能看出对手回球的空档，主动抓过渡球，用控底线把人压在身后。节奏变化和落点组合成体系，知道这一分要打哪。建议保持，同时复盘被逆转的局，找自己习惯性上头的时刻。","A":"会拉吊调动，也能抓对手的过渡球，但被快节奏压住时会退回凭感觉打。落点组合偏单一。建议每局给自己定两条固定套路，比如先压反手再抓直线，打完复盘执行率。","B":"知道要调动对手，实战里常打成你来我往的对抽，控底线不稳，回球容易过半场。缺少主动设计的一分。建议先练两点拉吊固定套路，再要求自己每分前想好下一拍落点。","C":"基本是打到哪算哪，对方一变线就跟不上节奏，回球质量靠对方失误。没有落点组合的概念。建议从每局只定一个目标开始，比如把球压到对手反手底线，坚持一整局。","D":"上场就是互相抡，球来了凭本能回，从不考虑下一拍。战术意识还没开始建立。建议先学会看对手站位再出手，每次打球只记一件事：他站哪，我就打另一边。"},"mental":{"S":"关键分敢要球，落后也不慌，失误后下一拍立刻复位。专注能撑满三局，情绪波动很小。建议继续保持，同时多打落后 5 分以上的模拟局，别让顺风球掩盖问题。","A":"大部分时候稳，关键分偶尔手紧，失误后要一两球才能回来。专注时长能覆盖两局。建议练 5 分钟固定发球节奏，再加打 11 分制的落后模拟局，专门练关键分处理。","B":"领先时打得开，一到 18 平就缩手，失误后会连着送两三分。失误后复位慢，情绪几乎写在脸上。建议先练失误后的固定动作，擦汗、看拍线、深呼吸，再打关键分模拟。","C":"比分一紧就发虚，失误后容易连续丢分，被对手连着得分时想放弃。专注大概只有一局。建议从 11 分制小局开始，每分给自己一个动作指令，把注意力从比分拉回下一拍。","D":"打球容易上头，一失误就骂自己或者干脆乱打，落后就提不起劲。情绪完全接管了比赛。建议先把目标降到一条：每球都认真发球，用固定呼吸节奏帮自己在失误后复位。"}},"analysis":{"phys":"身体维度的核心是鞭打链条：从蹬地、转髋、转体到肩肘腕依次加速，核心传导决定力量能不能送进拍头；变向制动则看你急停后能不能立刻再启动，这也是多拍后半段质量的分水岭。","foot":"步法不是跑得快，而是启动第一步快、回位快：击球后快速回中决定你下一拍的准备时间，脚踝刚性影响蹬地传力和急停稳定，交叉步则负责覆盖大对角和后场底线。","tech":"手法看两件事：拍面控制决定球去哪，手腕刚性决定球有多稳。触球瞬间手指的二次发力能把被动球救成主动，前场贴网搓放则是最能体现手感的一项，搓得贴网才有下一拍进攻。","attack":"进攻效率取决于击球点高度：点抢得高，下压角度才能压到边线；杀吊结合是让对手不敢提前退的关键，同一引拍打出两种球路，对手的重心才会被钉在原地。","tact":"战术是把一分拆成设计：控底线把对手压在身后，抓过渡球抢半场主动，靠节奏变化和落点组合逼出高质量回球。真正的高手不是每拍都发力，而是让对手每拍都不舒服。","mental":"心理层面的差距常在关键分处理：敢不敢要球、落后时能不能守住一分一分追；失误后复位快的人，下一拍还能执行战术，比赛专注时长则决定你在第三局还剩多少判断力。"},"combo":{"play":{"高攻":"进攻和身体是强项，就打得直接一点：后场抢高点杀吊结合，前场用推扑压住对手，争取 6 拍内结束一分。注意别每球都硬冲，杀完记得回中，防止被对手用平高球拖进长回合。","高控":"手法和战术强，就把比赛拖进你的节奏：拉吊四方球控底线，抓对手过渡球抢主动，用贴网搓放逼他起高球。注意落点要压深，别为了求变线把自己先打失误。","高防":"步法和意志强，就打得耐心一点：接杀挡网后快速回中，用对角拉吊把对手跑动拉长，等他先失误。注意防守不是被动挨打，救起球后要主动抢网，否则容易被连续下压打死。","均衡":"六维没有明显短板，最适合用套路球：发接发抢主动，前场吊后场压交替使用，用落点组合慢慢磨出机会。注意别样样都会却样样不精，挑两套最有把握的套路练到熟。"},"train":{"phys":"最弱时先练下肢和核心：每周两次深蹲、跳绳、平板支撑循环 3 组，再打 4×30 秒全速多球间歇，让心肺能跟上连续起跳。","foot":"最弱时练米字步和绳梯：无球米字步 5 组×2 分钟，绳梯练启动第一步，再上多球对角吊上网，强制每拍打完回中一步。","tech":"最弱时练固定点搓放：球桶摆在网边，正反手贴网搓 100 个只求贴网，再练手指二次发力和反手过渡，每天 15 分钟。","attack":"最弱时先固定击球点：原地顶点击球 20 个一组练高点下压，再加半场杀球和杀吊交替 30 拍，最后练杀完上网连贯。","tact":"最弱时练固定套路：两点拉吊压反手底线、抓过渡球抢网，每局只执行一套，打完记执行成功率，再换第二套。","mental":"最弱时练关键分模拟：直接打 11 分制小局从 9:9 开打，失误后固定做擦汗、深呼吸、看拍线三个动作再发球，每局复盘一次。"}}};
+
+  var DIMS = [
+    { key: "phys",  name: "身体素质", color: "#FF7A45" },
+    { key: "foot",  name: "步法移动", color: "#FFC94A" },
+    { key: "tech",  name: "手法技巧", color: "#7ED7F0" },
+    { key: "attack",name: "进攻能力", color: "#FF7A45" },
+    { key: "tact",  name: "打法思路", color: "#B49BFF" },
+    { key: "mental",name: "意志力",   color: "#8DE08D" }
+  ];
+  var GRADES = [
+    { key: "S", label: "优秀", min: 85, color: "#C9F25B" },
+    { key: "A", label: "良好", min: 72, color: "#7ED7F0" },
+    { key: "B", label: "中上", min: 58, color: "#8DE08D" },
+    { key: "C", label: "入门", min: 42, color: "#FFC94A" },
+    { key: "D", label: "起步", min: 0,  color: "#FF9F80" }
+  ];
+  var STYLE2 = {
+    "phys|foot": "全场飞人型", "phys|tech": "力量技术流", "phys|attack": "暴力突击型", "phys|tact": "体能压制型", "phys|mental": "拼命三郎型",
+    "foot|tech": "灵巧步法型", "foot|attack": "快速突击型", "foot|tact": "移动控制型", "foot|mental": "铁腿防守型",
+    "tech|attack": "技术进攻型", "tech|tact": "控球大师型", "tech|mental": "细腻稳重型",
+    "attack|tact": "战术重炮型", "attack|mental": "硬刚型",
+    "tact|mental": "铁壁拉吊型"
+  };
+  var SCALE = [
+    { v: 1, label: "很不符合" }, { v: 2, label: "不太符合" }, { v: 3, label: "一半一半" },
+    { v: 4, label: "比较符合" }, { v: 5, label: "非常符合" }
+  ];
+
+  var app = document.getElementById("app");
+  var state = { idx: 0, answers: new Array(QUESTIONS.length).fill(null), lock: false };
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]; }); }
+  function gradeOf(p){ for (var i=0;i<GRADES.length;i++) if (p>=GRADES[i].min) return GRADES[i]; return GRADES[GRADES.length-1]; }
+
+  /* 封面 */
+  function renderCover() {
+    app.innerHTML =
+      '<section class="screen" style="display:flex;flex-direction:column;gap:10px;padding-top:5vh">' +
+        '<span class="badge">羽毛球技巧自查 · 24 题 · 约 2 分钟</span>' +
+        '<h1>你的技术和打法，<br><em>到底差在哪？</em></h1>' +
+        '<p class="sub">不测球星、不讲天赋。24 道实战题，给你 3 条明天就能用的打球建议。</p>' +
+        '<div class="dims">' + DIMS.map(function(d){ return '<span class="chip"><i style="background:'+d.color+'"></i>'+d.name+'</span>'; }).join("") + '</div>' +
+        '<div class="facts"><div><b>24</b><span>道题</span></div><div><b>6</b><span>个维度</span></div><div><b>3</b><span>条建议</span></div></div>' +
+        '<div class="grow"></div>' +
+        '<button class="btn" id="start">开始自查 →</button>' +
+        '<p class="hint">按平时打球的第一感觉答，别想太久</p>' +
+        '<p class="footnote">24 道题 · 约 2 分钟 · 免费</p>' +
+      '</section>';
+    document.getElementById("start").addEventListener("click", function(){
+      state = { idx: 0, answers: new Array(QUESTIONS.length).fill(null), lock: false };
+      renderQuiz();
+    });
+  }
+
+  /* 答题 */
+  function renderQuiz() {
+    var q = QUESTIONS[state.idx];
+    var dim = DIMS.filter(function(d){ return d.key === q.dim; })[0] || DIMS[0];
+    var dimTotal = 0, dimStart = 0;
+    for (var i=0;i<QUESTIONS.length;i++){
+      if (QUESTIONS[i].dim === q.dim) { dimTotal++; if (i < state.idx) dimStart++; }
+    }
+    var pct = Math.round((state.idx / QUESTIONS.length) * 100);
+    app.innerHTML =
+      '<section class="screen">' +
+        '<div class="quizbar"><div class="qtop">' +
+          '<button class="back" id="back"' + (state.idx===0?" disabled":"") + '>←</button>' +
+          '<div class="qmeta"><div class="row"><span class="qcat" style="color:'+dim.color+'">'+dim.name+' · 第 '+(dimStart+1)+'/'+dimTotal+' 题</span>' +
+          '<span class="qcount">'+(state.idx+1)+' / '+QUESTIONS.length+'</span></div>' +
+          '<div class="track"><i style="width:'+pct+'%"></i></div></div>' +
+        '</div></div>' +
+        '<div class="qnum">Q'+(state.idx+1)+'</div>' +
+        '<p class="question">'+esc(q.text)+'</p>' +
+        SCALE.map(function(o){ return '<button class="opt" data-v="'+o.v+'"><span>'+o.label+'</span><span class="dot"></span></button>'; }).join("") +
+        '<div class="scale"><span>很不符合</span><span>一半一半</span><span>非常符合</span></div>' +
+        '<div class="grow"></div>' +
+      '</section>';
+    var opts = app.querySelectorAll(".opt");
+    Array.prototype.forEach.call(opts, function(el){
+      el.addEventListener("click", function(){
+        if (state.lock) return;
+        state.lock = true;
+        state.answers[state.idx] = parseInt(el.getAttribute("data-v"), 10);
+        el.classList.add("on");
+        var at = state.idx;
+        setTimeout(function(){
+          state.lock = false;
+          if (at !== state.idx) return;
+          if (state.idx < QUESTIONS.length - 1) { state.idx += 1; renderQuiz(); }
+          else { renderResult(); }
+        }, 160);
+      });
+    });
+    var b = document.getElementById("back");
+    if (b) b.addEventListener("click", function(){ if (state.idx > 0) { state.idx -= 1; renderQuiz(); } });
+  }
+
+  /* 计分 */
+  function score() {
+    var sums = {}, counts = {};
+    DIMS.forEach(function(d){ sums[d.key]=0; counts[d.key]=0; });
+    QUESTIONS.forEach(function(q, i){
+      var v = state.answers[i] || 3;
+      var val = q.reverse ? (6 - v) : v;
+      sums[q.dim] += val - 1; counts[q.dim] += 1;
+    });
+    return DIMS.map(function(d){
+      var max = counts[d.key] * 4;
+      var pct = max ? Math.round((sums[d.key]/max)*100) : 50;
+      var g = gradeOf(pct);
+      return { dim: d, pct: pct, grade: g };
+    });
+  }
+  function styleName(ordered){
+    var a=ordered[0].dim.key, b=ordered[1].dim.key;
+    return STYLE2[a+"|"+b] || STYLE2[b+"|"+a] || "均衡全面型";
+  }
+  function bandText(dimKey, gKey){ var t = COPY.band && COPY.band[dimKey] && COPY.band[dimKey][gKey]; return t || "这一项还在基础阶段，先把动作固定下来。"; }
+  function analysisText(dimKey){ return (COPY.analysis && COPY.analysis[dimKey]) || "这项的技术细节需要多看多练。"; }
+  function trainText(dimKey){ return (COPY.combo && COPY.combo.train && COPY.combo.train[dimKey]) || "从固定动作开始，每周练 2 次。"; }
+
+  var resultText = "";
+  function renderResult(isShared) {
+    var scores = score();
+    var ordered = scores.slice().sort(function(a,b){ return b.pct - a.pct; });
+    var top = ordered[0], second = ordered[1];
+    var low = ordered[ordered.length-1], low2 = ordered[ordered.length-2];
+    var sname = styleName(ordered);
+    var top2keys = ordered.slice(0,2).map(function(o){ return o.dim.key; });
+    var playKey = (top2keys.indexOf("attack")>=0 || top2keys.indexOf("phys")>=0) ? "高攻"
+                : ((top2keys.indexOf("tech")>=0 || top2keys.indexOf("tact")>=0) ? "高控" : "高防");
+    var playText = (COPY.combo && COPY.combo.play && COPY.combo.play[playKey]) || "";
+
+    resultText = [
+      "我的羽毛球技术自查：" + sname,
+      DIMS.map(function(d,i){ return d.name + " " + scores[i].grade.key; }).join(" · "),
+      "最该补：" + low.dim.name + "；第二：" + low2.dim.name,
+      "想要详细报告：把结果截图发我"
+    ].join("\n");
+
+    app.innerHTML =
+      '<section class="screen">' +
+        (isShared ? '<div class="card cta" style="margin-top:0"><div class="head">朋友分享的技术自查结果</div><p>TA 的打法类型是「'+esc(sname)+'」，你也来测一下自己的。</p></div>' : '') +
+        '<h1 style="font-size:30px">你的技术画像</h1>' +
+        '<p class="sub" style="margin-top:2px">'+esc(sname)+' · 强项 '+esc(top.dim.name)+'，短板 '+esc(low.dim.name)+'</p>' +
+
+        '<div class="card"><h3>六维等级</h3><div class="grade-row">' +
+          scores.map(function(s){ return '<div class="gcell"><div class="gn">'+s.dim.name+'</div>' +
+            '<div class="gg" style="color:'+s.grade.color+'">'+s.grade.key+'</div></div>'; }).join("") +
+        '</div></div>' +
+
+        '<div class="card"><h3>3 条给你这种打法的建议</h3>' +
+          '<div class="advice"><div class="ah"><span class="num">1</span><span class="at">先补「'+esc(low.dim.name)+'」</span></div>' +
+            '<p>'+esc(bandText(low.dim.key, low.grade.key))+'<br><b>练法：</b>'+esc(trainText(low.dim.key))+'</p></div>' +
+          '<div class="advice"><div class="ah"><span class="num">2</span><span class="at">技术解析：'+esc(low.dim.name)+'为什么拖后腿</span></div>' +
+            '<p>'+esc(analysisText(low.dim.key))+'</p></div>' +
+          '<div class="advice"><div class="ah"><span class="num">3</span><span class="at">下一场球就这么打</span></div>' +
+            '<p>'+esc(playText || "发挥你的强项，别硬拼短板。")+'</p>' +
+            '<p style="margin-top:8px"><b>其次补：</b>'+esc(trainText(low2.dim.key))+'</p></div>' +
+        '</div>' +
+
+        '<div class="card cta">' +
+          '<div class="head">这只是 24 题简版</div>' +
+          '<p>想要更细的六维诊断、针对性练法和 4 周计划？<br>把结果页截图发我，我给你出一份详细报告。</p>' +
+        '</div>' +
+
+        '<div class="actions"><button class="btn ghost" id="copy">复制结果</button>' +
+          '<button class="btn ghost" id="again" style="flex:none;width:auto;padding:15px 18px">再测一次</button></div>' +
+        '<p class="footnote">娱乐向技术自查，非专业评级 · 24 题简版</p>' +
+      '</section>';
+
+    document.getElementById("again").addEventListener("click", function(){ renderCover(); });
+    document.getElementById("copy").addEventListener("click", function(){
+      var t = resultText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function(){ alert("已复制结果"); }).catch(function(){ fallbackCopy(t); });
+      } else fallbackCopy(t);
+    });
+  }
+  function fallbackCopy(t){
+    try { var ta=document.createElement("textarea"); ta.value=t; ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); alert("已复制结果"); }
+    catch(e){ alert("复制失败，手动截图吧"); }
+  }
+
+  var shared = (location.search.match(/[?&]r=([^&]+)/) || [])[1];
+  if (shared) {
+    try {
+      var raw = atob(decodeURIComponent(shared));
+      if (raw.length === QUESTIONS.length && /^[1-5]+$/.test(raw)) {
+        state.answers = raw.split("").map(function(c){ return parseInt(c,10); });
+        renderResult(true);
+        return;
+      }
+    } catch (e) {}
+  }
+  renderCover();
+})();
+</script>
+</body>
+</html>
