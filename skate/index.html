@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1512">
+<title>羽毛球滑板吊球 · 5 张图看懂正手滑板</title>
+<meta name="description" content="正手滑板吊球技术图解：架拍、切球、拍头轨迹、随挥回位、直线/对角球路，5 张图 + 5 步拆解 + 4 个易错 + 4 个练习，手机上就能看。">
+<meta property="og:title" content="一拍滑板，把对手钉在原地 · 羽毛球滑板吊球图解">
+<meta property="og:description" content="5 张图看懂正手滑板吊球：拍面怎么切、拍头怎么走、球路怎么选，附 4 个练习和 4 周计划。">
+<meta property="og:type" content="article">
+<style>
+  :root{
+    --bg:#0B1512; --bg2:#12211B; --panel:rgba(255,255,255,.055);
+    --line:rgba(255,255,255,.11); --ink:#EEF4EE; --muted:#93A79C;
+    --lime:#C9F25B; --coral:#FF7A45; --gold:#FFC94A; --sky:#7ED7F0;
+    --rose:#FF5A7A; --violet:#B49BFF; --mint:#8DE08D;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;scroll-padding-top:64px;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(900px 500px at 110% -12%, rgba(201,242,91,.10) 0%, transparent 55%),
+      radial-gradient(800px 460px at -20% 108%, rgba(126,215,240,.08) 0%, transparent 60%),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans SC",sans-serif;
+    -webkit-font-smoothing:antialiased;min-height:100vh;line-height:1.68;
+    touch-action:manipulation;
+  }
+  .court{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;
+    background-image:linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(600px 600px at 50% 12%, #000 0%, transparent 78%);
+    -webkit-mask-image:radial-gradient(600px 600px at 50% 12%, #000 0%, transparent 78%);}
+  #prog{position:fixed;left:0;top:0;height:3px;width:0;z-index:60;
+    background:linear-gradient(90deg,var(--lime),var(--sky));box-shadow:0 0 12px rgba(201,242,91,.45);}
+  .app{max-width:520px;margin:0 auto;padding:0 16px calc(40px + env(safe-area-inset-bottom));}
+  h1{font-size:36px;line-height:1.15;margin:10px 0 0;font-weight:900;letter-spacing:-.03em;}
+  h1 em{font-style:normal;color:var(--lime);}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:99px;
+    border:1px solid rgba(201,242,91,.34);background:rgba(201,242,91,.08);color:var(--lime);
+    font-size:12px;font-weight:700;letter-spacing:.04em;}
+  .sub{color:var(--muted);font-size:14.5px;margin:10px 0 0;max-width:26em;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;font-size:12px;
+    background:var(--panel);border:1px solid var(--line);color:#D7E2D8;}
+  .chip i{width:7px;height:7px;border-radius:50%;display:block;}
+  .facts{display:flex;gap:24px;margin:18px 0 0;}
+  .facts b{font-size:23px;font-weight:900;letter-spacing:-.02em;display:block;}
+  .facts span{display:block;color:var(--muted);font-size:11px;margin-top:-1px;}
+  .hero{padding:9vh 0 22px;}
+  .scrollcue{margin-top:26px;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:8px;}
+  .scrollcue b{display:inline-block;width:1px;height:26px;background:linear-gradient(var(--lime),transparent);}
+  .navwrap{position:sticky;top:0;z-index:30;margin:0 -16px;padding:0 16px;
+    background:linear-gradient(180deg,rgba(11,21,18,.94),rgba(11,21,18,.72) 70%,rgba(11,21,18,0));
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+  .nav{display:flex;gap:7px;overflow-x:auto;padding:10px 0 12px;scrollbar-width:none;
+    mask-image:linear-gradient(to right,#000 92%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to right,#000 92%,transparent 100%);}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{flex:none;padding:6px 11px;border-radius:99px;font-size:11.5px;color:#C9D6C9;
+    background:rgba(255,255,255,.05);border:1px solid var(--line);text-decoration:none;white-space:nowrap;}
+  .nav a:active{background:rgba(201,242,91,.14);color:var(--lime);}
+  section{padding:34px 0 4px;}
+  .sechead{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+  .idx{font-size:11px;color:var(--lime);letter-spacing:.18em;font-weight:800;flex:none;}
+  h2{font-size:23px;margin:0;font-weight:900;letter-spacing:-.02em;line-height:1.3;}
+  .lead{color:var(--muted);font-size:13.5px;margin:8px 0 0;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px;margin-top:12px;}
+  .card h3{margin:0 0 8px;font-size:14px;font-weight:800;color:#E4EFE2;}
+  .para{font-size:14px;line-height:1.85;margin:0;color:#D9E3D8;}
+  .para + .para{margin-top:9px;}
+  .para b{color:#F2F8EF;}
+  .hi{color:var(--lime);font-weight:800;}
+  .hi-sky{color:var(--sky);font-weight:800;}
+  .hi-gold{color:var(--gold);font-weight:800;}
+  .note{font-size:12px;color:var(--muted);margin:9px 0 0;}
+  .kicker{font-size:10.5px;letter-spacing:.16em;color:var(--muted);font-weight:700;}
+  /* 对比表 */
+  .vs{display:grid;gap:8px;margin-top:10px;}
+  .vsrow{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:start;
+    padding:10px 11px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid var(--line);}
+  .vsrow b{font-size:12.5px;letter-spacing:.02em;}
+  .vsrow p{margin:0;font-size:12px;color:#C9D6C9;line-height:1.68;}
+  /* 图解 */
+  .fig{margin-top:14px;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+    background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.025));}
+  .figtop{display:flex;align-items:center;gap:9px;padding:12px 14px 0;}
+  .fignum{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--lime);
+    padding:3px 8px;border-radius:99px;background:rgba(201,242,91,.1);border:1px solid rgba(201,242,91,.3);}
+  .figtop b{font-size:13.5px;}
+  .fig svg{display:block;width:100%;height:auto;margin-top:2px;}
+  .figcap{padding:4px 14px 14px;}
+  .figcap p{margin:0;font-size:13px;line-height:1.72;color:#DCE7DB;}
+  .figcap small{display:block;margin-top:6px;font-size:11.5px;color:var(--muted);line-height:1.65;}
+  /* 分步 */
+  .steps{margin-top:8px;}
+  .step{display:flex;gap:12px;padding:14px 0 4px;}
+  .step:not(:last-child){border-bottom:1px dashed rgba(255,255,255,.09);}
+  .snum{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;
+    font-size:12px;font-weight:900;color:#0B1512;background:var(--lime);letter-spacing:.02em;}
+  .sbody{flex:1;min-width:0;}
+  .sbody h3{margin:2px 0 4px;font-size:15px;}
+  .sbody p{margin:0;font-size:13px;color:#C9D6C9;line-height:1.72;}
+  .tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;}
+  .tag{font-size:10.5px;padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.05);
+    border:1px solid var(--line);color:#C9D6C9;}
+  .tag.bad{color:#FFB4A8;border-color:rgba(255,122,69,.4);background:rgba(255,122,69,.08);}
+  .tag.good{color:#D6F5C0;border-color:rgba(201,242,91,.35);background:rgba(201,242,91,.07);}
+  /* 易错 */
+  .errs{display:flex;flex-direction:column;gap:9px;margin-top:12px;}
+  .err{padding:13px 14px;border-radius:15px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
+  .err .et{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800;}
+  .err .et i{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+    font-style:normal;font-size:11px;background:rgba(255,122,69,.16);color:#FF9F80;border:1px solid rgba(255,122,69,.35);}
+  .err p{margin:6px 0 0;font-size:12.5px;line-height:1.7;color:#C9D6C9;}
+  .err p b{color:#FFD5C8;font-weight:700;}
+  /* 练习 */
+  .drills{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+  .drill{padding:14px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
+  .drill .dt{display:flex;align-items:baseline;gap:9px;font-size:14px;font-weight:800;}
+  .drill .dt span{font-size:10px;color:var(--sky);letter-spacing:.1em;font-weight:800;}
+  .drill p{margin:6px 0 0;font-size:12.5px;line-height:1.7;color:#C9D6C9;}
+  .drill .std{margin-top:7px;font-size:11.5px;color:#A9E8A0;}
+  .plan{margin-top:12px;padding:14px;border-radius:16px;border:1px dashed rgba(201,242,91,.35);
+    background:rgba(201,242,91,.05);}
+  .plan h3{margin:0 0 8px;font-size:13.5px;color:var(--lime);}
+  .plan ol{margin:0;padding-left:18px;}
+  .plan li{font-size:12.5px;color:#D6E2D4;line-height:1.8;}
+  /* 清单 */
+  .checklist{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+  .ck{display:flex;align-items:flex-start;gap:10px;text-align:left;padding:12px 13px;border-radius:13px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:13px;color:#D6E2D4;transition:all .16s;}
+  .ck .box{flex:none;width:19px;height:19px;border-radius:6px;border:1.6px solid rgba(255,255,255,.28);
+    margin-top:1px;position:relative;transition:all .16s;}
+  .ck.on{border-color:rgba(201,242,91,.45);background:rgba(201,242,91,.09);}
+  .ck.on .box{border-color:var(--lime);background:var(--lime);}
+  .ck.on .box::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:9px;
+    border-right:2px solid #0B1512;border-bottom:2px solid #0B1512;transform:rotate(42deg);}
+  .ckdone{display:none;margin-top:11px;padding:12px 14px;border-radius:13px;font-size:13px;
+    color:#D6F5C0;background:rgba(201,242,91,.1);border:1px solid rgba(201,242,91,.35);}
+  .ckdone.show{display:block;}
+  .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;
+    border-radius:15px;background:var(--lime);color:#0B1512;font-weight:900;font-size:15px;
+    text-decoration:none;box-shadow:0 10px 26px rgba(201,242,91,.15);margin-top:14px;}
+  .cta:active{transform:scale(.99);}
+  .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none;font-weight:700;}
+  .xlinks{display:flex;flex-direction:column;gap:9px;margin-top:16px;}
+  .xlinks a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;
+    border-radius:13px;background:rgba(255,255,255,.04);border:1px solid var(--line);
+    color:#DDE8DC;text-decoration:none;font-size:13px;font-weight:700;}
+  .xlinks a span{color:var(--muted);font-size:11px;font-weight:500;}
+  footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:11px;line-height:1.75;}
+  footer b{color:#C9D6C9;font-weight:700;}
+  #toast{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,16px);
+    background:#EEF4EE;color:#0B1512;padding:10px 18px;border-radius:99px;font-size:12.5px;font-weight:700;
+    opacity:0;pointer-events:none;transition:all .25s ease;z-index:90;white-space:nowrap;}
+  #toast.show{opacity:1;transform:translate(-50%,0);}
+  .rev{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+  .rev.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none!important;transition:none!important;}
+    .rev{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="court"></div>
+<div id="prog"></div>
+<main class="app" id="app">
+
+  <section class="hero">
+    <span class="badge">🏸 技术图解 · 正手滑板吊球</span>
+    <h1>一拍滑板，<br><em>把对手钉在原地</em></h1>
+    <p class="sub">架拍像杀球、出手才减速——滑板吊球吃的是「切」和「藏」。5 张图拆开讲动作，5 步上手，再附 4 个易错和 4 个练习。</p>
+    <div class="chips">
+      <span class="chip"><i style="background:var(--lime)"></i>正手后场</span>
+      <span class="chip"><i style="background:var(--sky)"></i>切削手法</span>
+      <span class="chip"><i style="background:var(--gold)"></i>需要手感 · 上手约 2–4 周</span>
+    </div>
+    <div class="facts">
+      <div><b>5</b><span>张图解</span></div>
+      <div><b>5</b><span>步动作</span></div>
+      <div><b>4</b><span>个练习</span></div>
+    </div>
+    <div class="scrollcue"><b></b>向下滑，先从「它为什么难防」开始</div>
+  </section>
+
+  <div class="navwrap">
+    <nav class="nav">
+      <a href="#know">认识滑板</a>
+      <a href="#figs">五张图解</a>
+      <a href="#steps">分步动作</a>
+      <a href="#errors">常见错误</a>
+      <a href="#drills">练习方法</a>
+      <a href="#match">实战用法</a>
+      <a href="#check">自测清单</a>
+    </nav>
+  </div>
+
+  <!-- 01 -->
+  <section id="know" class="rev">
+    <div class="sechead"><span class="idx">01</span><h2>先认识「滑板」</h2></div>
+    <p class="lead">名字听起来花，本质是一个切削吊球：用准备动作骗人，用拍面切削减速，让球过网就往下掉。</p>
+    <div class="card">
+      <h3>它到底是什么</h3>
+      <p class="para">正手后场位，<b>架拍和高远球、杀球几乎一模一样</b>；击球瞬间，拍面从球托的右外侧向左前方「滑切」过去，把球的速度吃掉。球过网后很快下坠，落点在前发球线附近。</p>
+      <p class="para">关键不是「轻轻吊」，而是 <span class="hi">切</span>：拍面斜着从球托侧面滑过去，让球带一点旋转、线路更短。动作越像杀球，对手越不敢提前退。</p>
+      <p class="note">不同教练对「滑板 / 劈吊 / 收吊」的叫法略有差异，这里指正手后场切削拍面、拍头横向滑过球托的吊球手法。</p>
+    </div>
+    <div class="card">
+      <h3>为什么难防</h3>
+      <div class="vs">
+        <div class="vsrow"><b style="color:var(--lime)">准备一致</b><p>同样的侧身、同样的架拍高度，对手从你的准备动作里读不出「要吊」。</p></div>
+        <div class="vsrow"><b style="color:var(--gold)">出手才减速</b><p>触球前保持加速，触球瞬间才「松」下来，对手的重心已经被钉在原地。</p></div>
+        <div class="vsrow"><b style="color:var(--sky)">球带旋转</b><p>切削让球速掉得快、过网就坠，对手就算反应过来，也很难借力反攻。</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>和劈吊、收吊的区别</h3>
+      <div class="vs">
+        <div class="vsrow"><b style="color:var(--lime)">滑板</b><p>拍头<b>由外向内横向滑切</b>，动作最藏，球过网急坠。适合突然变节奏、骗重心。</p></div>
+        <div class="vsrow"><b style="color:var(--sky)">劈吊</b><p>更强调<b>向下切压</b>，球速稍快、线路更直，威胁更大但也更容易被借力。</p></div>
+        <div class="vsrow"><b style="color:var(--gold)">收吊</b><p>靠<b>减力把球送过网</b>，动作比较明显，但稳定、好上手，适合先建立落点感觉。</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>什么时候用</h3>
+      <div class="chips" style="margin-top:2px">
+        <span class="chip">对手挑高球到位</span>
+        <span class="chip">平高球落到半场</span>
+        <span class="chip">拉吊相持突然变速</span>
+        <span class="chip">对手站得靠后、准备接杀</span>
+      </div>
+      <p class="note">反过来说：击球点已经很低、被动救球、网前抢扑——这些时候别硬滑，先老老实实挡网或挑后场。</p>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section id="figs" class="rev">
+    <div class="sechead"><span class="idx">02</span><h2>五张图看懂动作</h2></div>
+    <p class="lead">先看图找感觉，再往下看分步拆解。图是示意，重点看拍面方向和拍头轨迹。</p>
+
+    <!-- 图1 -->
+    <div class="fig rev">
+      <div class="figtop"><span class="fignum">图 1 / 5</span><b>架拍 · 用杀球的准备</b></div>
+      <svg viewBox="0 0 360 250" role="img" aria-label="正手架拍示意图：侧身、拍头架高、非持拍手指向来球">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A2C"/><stop offset="1" stop-color="#0B1512"/>
+          </linearGradient>
+          <marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#C9F25B"/>
+          </marker>
+          <clipPath id="rk1"><ellipse cx="222" cy="30" rx="21" ry="27" transform="rotate(-38 222 30)"/></clipPath>
+        </defs>
+        <rect width="360" height="250" fill="url(#bg1)"/>
+        <path d="M-10 212 L370 212" stroke="rgba(255,255,255,.13)" stroke-width="1"/>
+        <path d="M-10 190 L370 190" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <!-- 准备动作三连标签 -->
+        <g font-size="10" font-weight="700">
+          <rect x="16" y="14" width="46" height="20" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.16)"/>
+          <text x="39" y="28" text-anchor="middle" fill="#B9C6B9">高远</text>
+          <rect x="68" y="14" width="46" height="20" rx="10" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.16)"/>
+          <text x="91" y="28" text-anchor="middle" fill="#B9C6B9">杀球</text>
+          <rect x="120" y="14" width="46" height="20" rx="10" fill="rgba(201,242,91,.14)" stroke="rgba(201,242,91,.5)"/>
+          <text x="143" y="28" text-anchor="middle" fill="#C9F25B">滑板</text>
+          <text x="16" y="52" fill="#6E8177">↑ 同一个准备动作</text>
+        </g>
+        <!-- 球员 -->
+        <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <circle cx="150" cy="74" r="13" fill="#C9F25B"/>
+          <path d="M152 88 L160 126" stroke="#C9F25B" stroke-width="15"/>
+          <!-- 腿 -->
+          <path d="M160 126 L132 166 L124 210" stroke="#C9F25B" stroke-width="11"/>
+          <path d="M160 126 L186 168 L198 208" stroke="#C9F25B" stroke-width="11"/>
+          <!-- 非持拍手 -->
+          <path d="M154 98 L118 106 L102 96" stroke="#7ED7F0" stroke-width="9"/>
+          <circle cx="99" cy="94" r="5" fill="#7ED7F0"/>
+          <!-- 持拍手 + 球拍 -->
+          <path d="M156 96 L184 70" stroke="#C9F25B" stroke-width="9"/>
+          <path d="M184 70 L206 48" stroke="#D8C3A5" stroke-width="5"/>
+          <ellipse cx="222" cy="30" rx="21" ry="27" transform="rotate(-38 222 30)" fill="rgba(201,242,91,.10)" stroke="#C9F25B" stroke-width="2.4"/>
+          <g transform="rotate(-38 222 30)" stroke="rgba(201,242,91,.55)" stroke-width="1" clip-path="url(#rk1)">
+            <line x1="201" y1="14" x2="243" y2="46"/><line x1="201" y1="22" x2="243" y2="54"/>
+            <line x1="201" y1="30" x2="243" y2="62"/><line x1="201" y1="38" x2="243" y2="70"/>
+            <line x1="205" y1="6" x2="239" y2="54"/><line x1="214" y1="4" x2="243" y2="46"/>
+          </g>
+        </g>
+        <!-- 标注 -->
+        <g font-size="10" fill="#93A79C">
+          <line x1="248" y1="62" x2="238" y2="50" stroke="#6E8177" stroke-width="1"/>
+          <text x="252" y="66" fill="#C9F25B">拍头架高</text>
+          <line x1="158" y1="100" x2="198" y2="116" stroke="#6E8177" stroke-width="1"/>
+          <text x="202" y="120" fill="#93A79C">侧身转肩</text>
+          <path d="M72 136 L94 104" stroke="#7ED7F0" stroke-width="1.1" marker-end="url(#ar1)"/>
+          <text x="10" y="152" fill="#7ED7F0">非持拍手指球</text>
+        </g>
+        <text x="180" y="236" text-anchor="middle" font-size="10" fill="#6E8177">准备动作越像杀球，滑板越骗人</text>
+      </svg>
+      <div class="figcap"><p>侧身对网、拍头架高、肘在前，非持拍手抬起来指向来球——这是高远球和杀球的准备，也是滑板的准备。</p>
+        <small>同一个准备动作，可以打高远、杀球、滑板。准备越像，对手越读不出来。</small></div>
+    </div>
+
+    <!-- 图2 -->
+    <div class="fig rev">
+      <div class="figtop"><span class="fignum">图 2 / 5</span><b>切球 · 拍面斜着滑过球托</b></div>
+      <svg viewBox="0 0 360 260" role="img" aria-label="拍面斜切球托与正拍面击球的对比示意图">
+        <defs>
+          <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A2C"/><stop offset="1" stop-color="#0B1512"/>
+          </linearGradient>
+          <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#FFC94A"/>
+          </marker>
+          <marker id="ar2r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#FF7A45"/>
+          </marker>
+          <clipPath id="c2"><ellipse cx="88" cy="150" rx="33" ry="43" transform="rotate(-40 88 150)"/></clipPath>
+          <clipPath id="c2b"><ellipse cx="268" cy="150" rx="40" ry="20"/></clipPath>
+        </defs>
+        <rect width="360" height="260" fill="url(#bg2)"/>
+        <line x1="180" y1="26" x2="180" y2="234" stroke="rgba(255,255,255,.14)" stroke-dasharray="4 5"/>
+        <!-- 左：斜切 -->
+        <text x="18" y="34" font-size="11" font-weight="800" fill="#C9F25B">✅ 斜着切</text>
+        <g>
+          <ellipse cx="88" cy="150" rx="33" ry="43" transform="rotate(-40 88 150)" fill="rgba(201,242,91,.08)" stroke="#C9F25B" stroke-width="2.4"/>
+          <g clip-path="url(#c2)" stroke="rgba(201,242,91,.5)" stroke-width=".9">
+            <line x1="40" y1="100" x2="136" y2="200"/><line x1="52" y1="88" x2="148" y2="188"/>
+            <line x1="64" y1="76" x2="160" y2="176"/><line x1="76" y1="64" x2="172" y2="164"/>
+            <line x1="88" y1="52" x2="184" y2="152"/><line x1="100" y1="40" x2="196" y2="140"/>
+          </g>
+          <path d="M88 150 L120 118" stroke="#D8C3A5" stroke-width="5" stroke-linecap="round"/>
+          <!-- 球 -->
+          <g transform="translate(128 86) rotate(18)">
+            <path d="M-13 0 L13 0 L7 22 L-7 22 Z" fill="#F6EDF2" opacity=".92"/>
+            <circle cx="0" cy="-2" r="6.5" fill="#7ED7F0"/>
+            <g stroke="#B9C6B9" stroke-width=".8"><line x1="-9" y1="8" x2="9" y2="8"/><line x1="-7" y1="14" x2="7" y2="14"/></g>
+          </g>
+          <!-- 切削箭头 -->
+          <path d="M158 108 Q120 130 96 168" fill="none" stroke="#FFC94A" stroke-width="2.4" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+          <text x="150" y="188" font-size="9.5" fill="#FFC94A">拍面从外向内滑切</text>
+          <path d="M100 96 A38 38 0 0 1 128 78" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/>
+          <text x="104" y="72" font-size="9.5" fill="#93A79C">≈45°</text>
+          <text x="18" y="222" font-size="10" fill="#C9F25B" font-weight="700">球被切削 → 过网急坠</text>
+        </g>
+        <!-- 右：正打 -->
+        <text x="200" y="34" font-size="11" font-weight="800" fill="#FF9F80">❌ 正着打</text>
+        <g>
+          <ellipse cx="268" cy="150" rx="40" ry="20" fill="rgba(255,122,69,.08)" stroke="#FF7A45" stroke-width="2.4"/>
+          <g clip-path="url(#c2b)" stroke="rgba(255,122,69,.45)" stroke-width=".9">
+            <line x1="228" y1="136" x2="308" y2="136"/><line x1="228" y1="144" x2="308" y2="144"/>
+            <line x1="228" y1="152" x2="308" y2="152"/><line x1="228" y1="160" x2="308" y2="160"/>
+            <line x1="240" y1="130" x2="240" y2="170"/><line x1="256" y1="130" x2="256" y2="170"/>
+            <line x1="272" y1="130" x2="272" y2="170"/><line x1="288" y1="130" x2="288" y2="170"/>
+          </g>
+          <path d="M268 150 L246 122" stroke="#D8C3A5" stroke-width="5" stroke-linecap="round"/>
+          <g transform="translate(272 92)">
+            <path d="M-13 0 L13 0 L7 22 L-7 22 Z" fill="#F6EDF2" opacity=".92"/>
+            <circle cx="0" cy="-2" r="6.5" fill="#FFB199"/>
+          </g>
+          <path d="M272 112 L272 134" stroke="#FF7A45" stroke-width="2.2" marker-end="url(#ar2r)"/>
+          <text x="282" y="124" font-size="9.5" fill="#FF9F80">球被弹出去</text>
+          <text x="200" y="222" font-size="10" fill="#FF9F80" font-weight="700">拍面正对 = 容易变成高球</text>
+        </g>
+        <text x="180" y="246" text-anchor="middle" font-size="10" fill="#6E8177">初学先慢一点，把「斜切」的拍面角度固定住</text>
+      </svg>
+      <div class="figcap"><p>拍面大约 45° 斜着，从球托右外侧向左前方「滑」过去，球才会被切削减速、过网下坠。</p>
+        <small>拍面太正，球被弹出去就变成平高球或高远球；切得太薄又容易下网。先找到「唰」而不是「啪」的声音。</small></div>
+    </div>
+
+    <!-- 图3 -->
+    <div class="fig rev">
+      <div class="figtop"><span class="fignum">图 3 / 5</span><b>轨迹 · 先向前，再横切</b></div>
+      <svg viewBox="0 0 360 250" role="img" aria-label="滑板吊球拍头轨迹示意图：先向前加速，再横向滑切">
+        <defs>
+          <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A2C"/><stop offset="1" stop-color="#0B1512"/>
+          </linearGradient>
+          <marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#C9F25B"/>
+          </marker>
+        </defs>
+        <rect width="360" height="250" fill="url(#bg3)"/>
+        <!-- 球员（正面） -->
+        <g stroke-linecap="round" fill="none">
+          <circle cx="150" cy="86" r="13" fill="#7ED7F0" opacity=".85"/>
+          <path d="M150 100 L150 148" stroke="#7ED7F0" stroke-width="14" opacity=".8"/>
+          <path d="M150 148 L128 178 L120 208" stroke="#7ED7F0" stroke-width="10" opacity=".8"/>
+          <path d="M150 148 L176 176 L188 206" stroke="#7ED7F0" stroke-width="10" opacity=".8"/>
+          <path d="M150 112 L122 132" stroke="#7ED7F0" stroke-width="8" opacity=".8"/>
+          <path d="M150 112 L176 100" stroke="#C9F25B" stroke-width="9"/>
+        </g>
+        <!-- 轨迹 -->
+        <path d="M268 44 C258 78 232 92 202 100 C168 110 134 128 108 162" fill="none"
+              stroke="#C9F25B" stroke-width="2.4" stroke-dasharray="7 5" opacity=".85"/>
+        <path d="M250 34 C242 58 226 74 204 86" fill="none" stroke="rgba(201,242,91,.3)" stroke-width="6" stroke-linecap="round"/>
+        <!-- 三个拍头位置 -->
+        <g stroke="#C9F25B" fill="rgba(201,242,91,.07)" stroke-width="2">
+          <ellipse cx="268" cy="40" rx="17" ry="23" transform="rotate(22 268 40)"/>
+          <ellipse cx="204" cy="92" rx="17" ry="23" transform="rotate(-12 204 92)"/>
+          <ellipse cx="112" cy="158" rx="17" ry="23" transform="rotate(-58 112 158)"/>
+        </g>
+        <g fill="#C9F25B" font-size="10" font-weight="800">
+          <circle cx="292" cy="60" r="9" fill="#C9F25B"/><text x="292" y="63.5" text-anchor="middle" fill="#0B1512">1</text>
+          <circle cx="226" cy="112" r="9" fill="#C9F25B"/><text x="226" y="115.5" text-anchor="middle" fill="#0B1512">2</text>
+          <circle cx="94" cy="186" r="9" fill="#C9F25B"/><text x="94" y="189.5" text-anchor="middle" fill="#0B1512">3</text>
+        </g>
+        <text x="180" y="238" text-anchor="middle" font-size="10" fill="#93A79C">① 引拍 → ② 向前 + 横向滑切 → ③ 收拍减速</text>
+      </svg>
+      <div class="figcap"><p>拍头不是「从上往下砍」，也不是「往前推」：先向前上方加速，触球那一瞬横向滑切，然后马上减速收住。</p>
+        <small>慢动作看自己的拍头轨迹：触球后拍头是不是还在往左前走？没有横切，球就没有「滑」的感觉。</small></div>
+    </div>
+
+    <!-- 图4 -->
+    <div class="fig rev">
+      <div class="figtop"><span class="fignum">图 4 / 5</span><b>随挥 · 收拍短，回位快</b></div>
+      <svg viewBox="0 0 360 250" role="img" aria-label="滑板吊球随挥与回位示意图：收拍在身体左前、前脚蹬回中心">
+        <defs>
+          <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A2C"/><stop offset="1" stop-color="#0B1512"/>
+          </linearGradient>
+          <marker id="ar4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#C9F25B"/>
+          </marker>
+          <marker id="ar4s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7ED7F0"/>
+          </marker>
+        </defs>
+        <rect width="360" height="250" fill="url(#bg4)"/>
+        <line x1="0" y1="212" x2="360" y2="212" stroke="rgba(255,255,255,.13)"/>
+        <line x1="300" y1="30" x2="300" y2="220" stroke="rgba(255,255,255,.06)"/>
+        <!-- 球员侧身 -->
+        <g stroke-linecap="round" fill="none">
+          <circle cx="148" cy="64" r="13" fill="#C9F25B"/>
+          <path d="M150 78 L164 128" stroke="#C9F25B" stroke-width="14"/>
+          <path d="M164 128 L196 160 L214 206" stroke="#C9F25B" stroke-width="11"/>
+          <path d="M164 128 L134 172 L122 210" stroke="#C9F25B" stroke-width="11"/>
+          <path d="M158 100 L124 128 L98 152" stroke="#C9F25B" stroke-width="9"/>
+          <path d="M98 152 L78 170" stroke="#D8C3A5" stroke-width="5"/>
+          <ellipse cx="62" cy="186" rx="18" ry="24" transform="rotate(24 62 186)" fill="rgba(201,242,91,.1)" stroke="#C9F25B" stroke-width="2.2"/>
+          <path d="M170 96 L198 114" stroke="#7ED7F0" stroke-width="8" opacity=".8"/>
+        </g>
+        <!-- 重心/回位箭头 -->
+        <path d="M232 196 L286 196" stroke="#C9F25B" stroke-width="2.2" marker-end="url(#ar4)"/>
+        <text x="236" y="186" font-size="10" fill="#C9F25B">重心向前</text>
+        <path d="M196 138 C232 142 240 118 214 108" fill="none" stroke="#7ED7F0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar4s)"/>
+        <text x="228" y="156" font-size="10" fill="#7ED7F0">收拍后回中</text>
+        <text x="180" y="236" text-anchor="middle" font-size="10" fill="#6E8177">收拍停在身体左前，前脚一落地就蹬回中间</text>
+      </svg>
+      <div class="figcap"><p>触球后收拍停在身体左前方、大约到腰的高度就够了；前脚落地蹬回中心，马上准备下一拍。</p>
+        <small>随挥越大，回位越慢。滑板是「省动作」的球，不是甩大臂的球。</small></div>
+    </div>
+
+    <!-- 图5 -->
+    <div class="fig rev">
+      <div class="figtop"><span class="fignum">图 5 / 5</span><b>球路 · 直线稳，对角骗</b></div>
+      <svg viewBox="0 0 360 300" role="img" aria-label="滑板吊球直线与对角球路落点示意图">
+        <defs>
+          <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1B3A2C"/><stop offset="1" stop-color="#0B1512"/>
+          </linearGradient>
+          <marker id="ar5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#C9F25B"/>
+          </marker>
+          <marker id="ar5g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#FFC94A"/>
+          </marker>
+        </defs>
+        <rect width="360" height="300" fill="url(#bg5)"/>
+        <!-- 球场 -->
+        <g stroke="rgba(255,255,255,.34)" stroke-width="1.2" fill="none">
+          <rect x="40" y="22" width="280" height="256"/>
+          <line x1="40" y1="98" x2="320" y2="98"/>
+          <line x1="40" y1="202" x2="320" y2="202"/>
+          <line x1="40" y1="22" x2="320" y2="22"/>
+          <line x1="40" y1="278" x2="320" y2="278"/>
+        </g>
+        <!-- 网 -->
+        <g>
+          <line x1="40" y1="150" x2="320" y2="150" stroke="#7ED7F0" stroke-width="2.4" opacity=".85"/>
+          <line x1="40" y1="150" x2="320" y2="150" stroke="rgba(126,215,240,.35)" stroke-width="7"/>
+          <text x="330" y="153" font-size="9" fill="#7ED7F0">网</text>
+        </g>
+        <!-- 前场落点区 -->
+        <rect x="40" y="98" width="280" height="52" fill="rgba(201,242,91,.05)"/>
+        <!-- 起点 -->
+        <circle cx="228" cy="252" r="6" fill="#EEF4EE"/>
+        <text x="238" y="258" font-size="9.5" fill="#93A79C">你在后场</text>
+        <!-- 直线 -->
+        <path d="M228 252 C246 206 252 168 254 114" fill="none" stroke="#C9F25B" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ar5)"/>
+        <circle cx="254" cy="112" r="11" fill="rgba(201,242,91,.14)" stroke="#C9F25B" stroke-width="1.6"/>
+        <circle cx="254" cy="112" r="3" fill="#C9F25B"/>
+        <text x="272" y="110" font-size="10" fill="#C9F25B" font-weight="700">直线滑板</text>
+        <text x="272" y="123" font-size="8.5" fill="#93A79C">线路短，更稳</text>
+        <!-- 对角 -->
+        <path d="M228 252 C190 206 156 160 122 116" fill="none" stroke="#FFC94A" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ar5g)"/>
+        <circle cx="120" cy="114" r="11" fill="rgba(255,201,74,.13)" stroke="#FFC94A" stroke-width="1.6"/>
+        <circle cx="120" cy="114" r="3" fill="#FFC94A"/>
+        <text x="18" y="100" font-size="10" fill="#FFC94A" font-weight="700">对角滑板</text>
+        <text x="18" y="113" font-size="8.5" fill="#93A79C">更骗重心</text>
+        <!-- 文字 -->
+        <text x="180" y="46" text-anchor="middle" font-size="10" fill="#93A79C">对手半场 · 落点在前发球线附近</text>
+        <text x="180" y="290" text-anchor="middle" font-size="9.5" fill="#6E8177">过网就坠，别追求贴网：落点深一点更安全</text>
+      </svg>
+      <div class="figcap"><p>直线滑板线路短、失误少，适合先练稳；对角滑板更骗人，对手重心偏外侧、反手前场弱时最好用。</p>
+        <small>目标是「过网之后马上掉」到前发球线附近，不是越贴网越好——贴网太多，下网风险也高。</small></div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section id="steps" class="rev">
+    <div class="sechead"><span class="idx">03</span><h2>五步拆解，照着练</h2></div>
+    <p class="lead">从准备到回位，每一步只盯一个重点。先慢后快，先把拍面固定住。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="snum">1</div>
+        <div class="sbody"><h3>准备 · 和高远球、杀球一模一样</h3>
+          <p>侧身对网，拍头架高、肘在身体前方；非持拍手抬起来指向来球，重心压在后脚。</p>
+          <div class="tagrow"><span class="tag good">架拍高度一致</span><span class="tag good">转肩不抡臂</span><span class="tag bad">别提前摊平拍面</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum">2</div>
+        <div class="sbody"><h3>引拍 · 肘先走，拍头留在身后</h3>
+          <p>以肘为轴把拍头往后引，拍面略微打开；转肩带动，而不是用手臂拼命往后拉。</p>
+          <div class="tagrow"><span class="tag good">拍头被「拖」在后面</span><span class="tag bad">别提前减速</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum">3</div>
+        <div class="sbody"><h3>击球点 · 肩前上方，别等落到头顶</h3>
+          <p>在右肩前上方、手臂将直未直的时候击球；身体向前压，眼睛盯住球托。</p>
+          <div class="tagrow"><span class="tag good">击球点越高越有威胁</span><span class="tag bad">别在身后击球</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum">4</div>
+        <div class="sbody"><h3>切击 · 小臂内旋 + 手腕内收 + 手指收紧</h3>
+          <p>触球瞬间小臂内旋、手腕内收，拍面从球托右外侧向左前滑切；手指在最后一下收紧，「包」住球托。</p>
+          <div class="tagrow"><span class="tag good">「唰」的一声</span><span class="tag good">触球后再松</span><span class="tag bad">拍面别正对球</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="snum">5</div>
+        <div class="sbody"><h3>随挥 · 收拍短，马上回中</h3>
+          <p>收拍停在身体左前，到腰的高度就够；前脚落地蹬回中心，眼睛回到对手身上。</p>
+          <div class="tagrow"><span class="tag good">收拍短</span><span class="tag good">前脚蹬回中</span><span class="tag bad">别甩到背后</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section id="errors" class="rev">
+    <div class="sechead"><span class="idx">04</span><h2>四个最常见的错</h2></div>
+    <p class="lead">这四种错误最费时间，对着改，滑板进步会快很多。</p>
+    <div class="errs">
+      <div class="err"><div class="et"><i>1</i>拍面太正，球弹高了</div>
+        <p><b>表现：</b>出手像吊球，球却飞成平高球或高远球。<b>原因：</b>拍面正对球托，没有切到侧面。<b>改法：</b>拍面斜 30–45°，想象用拍面「擦」球托的右外侧，从外向内滑过去。</p></div>
+      <div class="err"><div class="et"><i>2</i>切得太薄，球下网</div>
+        <p><b>表现：</b>球一过网就栽进网里。<b>原因：</b>只擦到羽毛、没有包住球托底部。<b>改法：</b>击球点再高一点，拍面多包一点球的底部，先保证过网，再追求贴网。</p></div>
+      <div class="err"><div class="et"><i>3</i>击球点太低，在身后</div>
+        <p><b>表现：</b>球没有角度，动作也藏不住。<b>原因：</b>启动慢、等球掉下来才打。<b>改法：</b>来球一出拍就启动，抢在右肩前上方击球；练的时候宁愿打不到，也别退到身后打。</p></div>
+      <div class="err"><div class="et"><i>4</i>动作太大，提前减速</div>
+        <p><b>表现：</b>对手看到你架拍就提前退，滑板变成「自杀吊」。<b>原因：</b>准备动作和杀球不一样，或者触球前就收力。<b>改法：</b>准备动作全程像杀球，只在触球瞬间减速，收拍要短。</p></div>
+    </div>
+    <p class="note">还有一个隐藏坑：击球后重心后坐、不回位。滑板吊完对手一旦挑回后场，你要能马上再移动。</p>
+  </section>
+
+  <!-- 05 -->
+  <section id="drills" class="rev">
+    <div class="sechead"><span class="idx">05</span><h2>四个练习，今天就能试</h2></div>
+    <p class="lead">不用等教练：一个球、一块场地就能练前三项，第四项找球搭子。</p>
+    <div class="drills">
+      <div class="drill"><div class="dt"><span>DRILL 01</span>抛球切球 · 先找「切面」</div>
+        <p>自己把球抛到右肩前上方，原地用滑板动作切出去。别发力，专注听声音、看球是不是带旋转落下来。</p>
+        <div class="std">20 个 × 3 组 · 听到「唰」、球落在身前 1–2 米算合格</div></div>
+      <div class="drill"><div class="dt"><span>DRILL 02</span>多球定点 · 直线/对角分开练</div>
+        <p>球友发高球，先在固定点切直线 10 个，再切对角 10 个。用标志碟把前发球线附近圈出两个落点区。</p>
+        <div class="std">先连续 10 个进 6 个，再换线；不要一开始就追求贴网</div></div>
+      <div class="drill"><div class="dt"><span>DRILL 03</span>影子挥拍 + 慢动作录像</div>
+        <p>对镜子或架手机慢动作，检查两件事：架拍是不是和杀球一样？触球后拍头有没有横向滑出去？</p>
+        <div class="std">2 分钟 × 3 组 · 视频里看到「向前再横切」就对了</div></div>
+      <div class="drill"><div class="dt"><span>DRILL 04</span>半场对抗 · 每 3 拍用一次</div>
+        <p>半场对拉，规定自己每 3 拍必须用一次滑板吊球，逼自己在移动里找击球点、找出手时机。</p>
+        <div class="std">每局 5 分钟 · 能在跑动中打出 3 个以上有质量的滑板</div></div>
+    </div>
+    <div class="plan">
+      <h3>4 周小计划 · 每周 2 次，每次 15 分钟</h3>
+      <ol>
+        <li>第 1 周：抛球切球 + 影子挥拍，先把拍面角度固定住</li>
+        <li>第 2 周：多球定点直线，把「过网即坠」打稳</li>
+        <li>第 3 周：多球定点对角 + 录像自查，开始练两种线</li>
+        <li>第 4 周：半场对抗里用起来，统计 10 个滑板能进几个</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section id="match" class="rev">
+    <div class="sechead"><span class="idx">06</span><h2>实战里怎么用</h2></div>
+    <p class="lead">练会只是第一步，什么时候敢用、用在哪种球上，才是滑板值钱的地方。</p>
+    <div class="card">
+      <h3>两个最好用的时机</h3>
+      <p class="para"><span class="hi">① 对手站位偏后。</span>你连续压了两拍后场，对手退到后场准备接杀——这一拍突然滑一个前场，他往前冲的时间根本不够。</p>
+      <p class="para"><span class="hi">② 对手刚起高球、还没回中。</span>挑球质量不高、落点在中后场时，滑板的线路短，球落地时对手往往还在后退。</p>
+    </div>
+    <div class="card">
+      <h3>落点怎么选</h3>
+      <p class="para"><b style="color:var(--lime)">直线：</b>线路短、稳定，适合先建立信心，也适合对手站位偏中间时突然打身后。</p>
+      <p class="para"><b style="color:var(--gold)">对角：</b>更骗重心。对手重心偏外侧、正手前场空、或者反手前场弱的时候，一记对角滑板最伤人。</p>
+    </div>
+    <div class="card">
+      <h3>两套组合拳</h3>
+      <p class="para"><b>直线滑板 → 逼挑 → 下一拍杀/平高压反手。</b>先用滑板把对手拉到网前，他挑起来，你正好在后场发力。</p>
+      <p class="para"><b>对角滑板 → 对手回直线 → 抢网推扑。</b>对手救完对角大概率回直线，提前往网前压半步，直接拿主动。</p>
+    </div>
+    <div class="card">
+      <h3>看高手怎么藏</h3>
+      <p class="para">女单的手感型球员（比如戴资颖、因达农）最擅长在同一个引拍里切换吊、杀、平高，靠的就是准备动作一致加上触球瞬间的手指变化。业余先练「一个准备、三种球」，比单练滑板更实用。</p>
+      <p class="note">对手抢网很快的时候别硬滑，先挡网或挑后场，把节奏拉回来。</p>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section id="check" class="rev">
+    <div class="sechead"><span class="idx">07</span><h2>练完自测一下</h2></div>
+    <p class="lead">六条都打勾，说明你已经能在实战里放心用滑板了。</p>
+    <div class="checklist" id="checklist">
+      <button class="ck" type="button"><span class="box"></span>我的架拍和高远球、杀球几乎一样</button>
+      <button class="ck" type="button"><span class="box"></span>我在肩前上方击球，不是等球落到头顶</button>
+      <button class="ck" type="button"><span class="box"></span>滑板球过网后明显下坠，落点在前发球线附近</button>
+      <button class="ck" type="button"><span class="box"></span>连续 10 个滑板能进 6 个以上</button>
+      <button class="ck" type="button"><span class="box"></span>收拍后我能马上回中，不站在原地看球</button>
+      <button class="ck" type="button"><span class="box"></span>击球声是「唰」，不是「啪」</button>
+    </div>
+    <div class="ckdone" id="ckdone">🏸 六条全过！去实战里试试「滑板 + 组合拳」吧。</div>
+    <p class="note" id="ckcount">已完成 0 / 6</p>
+  </section>
+
+  <section class="rev">
+    <a class="cta" href="https://1976429093z-byte.github.io/badminton/women/" target="_blank" rel="noopener">测测你的球风像哪位女将 →</a>
+    <div class="xlinks">
+      <a href="https://1976429093z-byte.github.io/badminton/women/#" target="_blank" rel="noopener">女版羽毛球打法测评 <span>60 题 · 10 位女将</span></a>
+      <a href="https://1976429093z-byte.github.io/badminton/technique.html" target="_blank" rel="noopener">羽毛球技术自查 <span>3 条打球建议</span></a>
+      <a href="javascript:void(0)" id="shareLink">把这页分享给球搭子 <span>复制链接</span></a>
+    </div>
+    <footer>
+      <b>说明</b>：本文图解为简化示意，重点是拍面方向和拍头轨迹；具体动作细节请结合教练指导。不同地区对「滑板 / 劈吊 / 收吊」的叫法略有差异。<br><br>
+      场地与动作示意为自绘 SVG，可点击图片放大查看 · 手机上建议横屏看大图。
+    </footer>
+  </section>
+</main>
+<div id="toast">已复制</div>
+
+<script>
+(function () {
+  "use strict";
+  var prog = document.getElementById("prog");
+  function onScroll() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var y = window.scrollY || document.documentElement.scrollTop;
+    prog.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + "%";
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // 滚动到可见时淡入
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    document.querySelectorAll(".rev").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".rev").forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // 自测清单
+  var list = document.getElementById("checklist");
+  var countEl = document.getElementById("ckcount");
+  var doneEl = document.getElementById("ckdone");
+  function refresh() {
+    var n = list.querySelectorAll(".ck.on").length;
+    countEl.textContent = "已完成 " + n + " / 6";
+    doneEl.classList.toggle("show", n === 6);
+  }
+  list.addEventListener("click", function (e) {
+    var btn = e.target.closest(".ck");
+    if (!btn) return;
+    btn.classList.toggle("on");
+    refresh();
+  });
+  refresh();
+
+  // 复制本页链接
+  var toast = document.getElementById("toast");
+  var t = null;
+  function showToast(m) {
+    toast.textContent = m;
+    toast.classList.add("show");
+    clearTimeout(t);
+    t = setTimeout(function () { toast.classList.remove("show"); }, 1600);
+  }
+  function copy(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { showToast("链接已复制"); })
+        .catch(function () { fallback(text); });
+    } else { fallback(text); }
+  }
+  function fallback(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta);
+      showToast("链接已复制");
+    } catch (err) { showToast("复制失败，手动复制地址栏"); }
+  }
+  document.getElementById("shareLink").addEventListener("click", function () {
+    copy("羽毛球滑板吊球 · 5 张图看懂正手滑板 → " + location.href.split("?")[0]);
+  });
+})();
+</script>
+</body>
+</html>
